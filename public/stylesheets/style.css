@@ -13,3 +13,20 @@ body {
   font-size: 300%;
   margin: 2% auto;
 }
+
+#input-box-wrapper {
+  text-align: center;
+}
+
+#input-box {
+  width: 400px;
+  height: 30px;
+  margin-top: 10px;
+
+}
+
+#input-btn {
+  width: 60px;
+  height: 30px;
+  margin-top: -4px;
+}
