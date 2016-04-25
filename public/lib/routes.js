@@ -1,6 +1,9 @@
 import React from 'react';
 import { Route } from 'react-router';
+import MainPage from './components/main/index';
 
 export default (
-  <div>Main component place holder</div>
+  <div>
+    <Route path='/' component={MainPage} />
+  </div>
 );
