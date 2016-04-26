@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getAllPosts } from '../../actions/PostActions';
+import Post from './post';
 
 class DisplayPosts extends React.Component {
   constructor(props) {
@@ -11,12 +12,16 @@ class DisplayPosts extends React.Component {
     });
   }
 
+  renderPosts() {
+    return this.props.posts.map(post => {
+      console.log('each post is: ', post);
+    });
+  }
+
   render() {
     return (
       <ul>
-        <li>Placeholder Post 1</li>
-        <li>Placeholder Post 2</li>
-        <li>Placeholder Post 3</li>
+        {this.renderPosts()}
       </ul>
     );
   }
