@@ -8,6 +8,13 @@ let postSchema = new mongoose.Schema({
 
 var Post;
 
+postSchema.statics.getAll = function(callback) {
+  Post.find({}, function(err, posts) {
+    if(err) return err;
+    return callback(null, posts);
+  });
+}
+
 postSchema.statics.create = function (post, callback) {
   var newPost = new Post(post);
   newPost.save(function(err, postCreated) {
