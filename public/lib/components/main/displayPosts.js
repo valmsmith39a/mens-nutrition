@@ -7,9 +7,7 @@ class DisplayPosts extends React.Component {
   constructor(props) {
     super(props);
     this.props.getAllPosts()
-      .then(response => {
-        console.log('response: ', response);
-    });
+      .then(response => {});
   }
 
   renderPosts() {
