@@ -1,6 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { getAllPosts } from '../../actions/PostActions';
 
-export default class DisplayPosts extends React.Component {
+class DisplayPosts extends React.Component {
+  constructor(props) {
+    super(props);
+    this.props.getAllPosts()
+      .then(response => {
+        console.log('response: ', response);
+    });
+  }
 
   render() {
     return (
@@ -12,3 +21,9 @@ export default class DisplayPosts extends React.Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return state;
+}
+
+export default connect(null, { getAllPosts })(DisplayPosts);
