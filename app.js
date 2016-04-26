@@ -4,12 +4,18 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var posts = require('./routes/posts');
 
 var app = express();
+
+var mongoURL = process.env.MLAB_URI || 'mongodb://localhost/mens_nutrition';
+mongoose.connect(mongoURL, function(err) {
+  console.log(err || `Connected to MongoDB: ${mongoURL}`);
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -1,4 +1,5 @@
 var express = require('express');
+var Post = require('../models/Post');
 var router = express.Router();
 
 var testArray = [
@@ -12,9 +13,12 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-  // Temporarily storing post in testArray
-  testArray.push(req.body);
-  res.send(req.body);
+  // testArray.push(req.body);
+  console.log('req.body is: ', req.body);
+  Post.create(req.body, function(err, postCreated){
+    console.log('post created successfully: ', postCreated);
+    res.status(err ? 400:200).send(err||postCreated);
+  });
 });
 
 module.exports = router;
