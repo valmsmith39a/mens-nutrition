@@ -11,4 +11,12 @@ router.get('/', function(req, res, next) {
   res.send(testArray);
 });
 
+router.post('/', function(req, res, next) {
+  console.log('req.body in post route is: ', req.body);
+  console.log('test array is now: ', testArray);
+  // Temporarily storing post in testArray
+  testArray.push(req.body);
+  res.send(req.body);
+});
+
 module.exports = router;
