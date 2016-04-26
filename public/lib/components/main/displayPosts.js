@@ -13,9 +13,9 @@ class DisplayPosts extends React.Component {
   }
 
   renderPosts() {
-    return this.props.posts.map(post => {
-      console.log('each post is: ', post);
-    });
+    return this.props.posts.map((post, index) =>
+        <Post key={index} post={post} index={index} />
+    );
   }
 
   render() {

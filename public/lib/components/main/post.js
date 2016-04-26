@@ -1,9 +1,14 @@
 import React from 'react';
 
 export default class Post extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log('this.props.post', this.props);
+  }
+
   render() {
     return (
-      <div>TEST POST 1</div>
+      <li>{this.props.post.url}</li>
     );
   }
 }
