@@ -26,4 +26,4 @@ function mapStateToProps(state) {
   return state;
 }
 
-export default connect(null, { getAllPosts })(DisplayPosts);
+export default connect(mapStateToProps, { getAllPosts })(DisplayPosts);
