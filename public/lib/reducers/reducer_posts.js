@@ -1,13 +1,16 @@
-const INITIAL_STATE = [];
 import {
-  GET_ALL_POSTS
+  GET_ALL_POSTS,
+  CREATE_POST
 } from '../actions/PostActions';
+
+const INITIAL_STATE = [];
 
 export default function(state = INITIAL_STATE, action) {
   switch(action.type) {
     case GET_ALL_POSTS:
-      console.log('in get all posts reducer');
       return action.payload.data;
+    case CREATE_POST:
+      return [...state, action.payload.data];
     default:
       return state;
   }
