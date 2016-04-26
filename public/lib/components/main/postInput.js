@@ -6,8 +6,13 @@ import {
 
 class PostInput extends React.Component {
   createPost() {
-    console.log('inputData: ', this.refs.inputData.value);
-    
+    const postObject = {
+      url: this.refs.inputData.value
+    }
+    this.props.createPost(postObject)
+      .then(response => {
+        console.log('response after post is: ', response);
+      })
   }
 
   render() {

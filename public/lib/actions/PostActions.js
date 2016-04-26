@@ -15,7 +15,7 @@ export function getAllPosts() {
   }
 }
 
-export function createPost() {
+export function createPost(post) {
   const request = axios.post('/posts', post);
 
   return {
