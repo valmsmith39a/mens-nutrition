@@ -12,8 +12,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-  console.log('req.body in post route is: ', req.body);
-  console.log('test array is now: ', testArray);
   // Temporarily storing post in testArray
   testArray.push(req.body);
   res.send(req.body);

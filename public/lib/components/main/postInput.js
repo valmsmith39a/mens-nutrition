@@ -10,9 +10,7 @@ class PostInput extends React.Component {
       url: this.refs.inputData.value
     }
     this.props.createPost(postObject)
-      .then(response => {
-        console.log('response after post is: ', response);
-      })
+      .then(response => {});
   }
 
   render() {
