@@ -1,9 +1,15 @@
 import React from 'react';
+import { deletePost } from '../../actions/PostActions';
 
 export default class DeletePost extends React.Component {
+  handleClick() {
+    console.log('in handle Click');
+
+  }
+
   render() {
     return (
-      <button>Delete</button>  
+      <button onClick={this.handleClick.bind(this)}>Delete</button>
     );
   }
 }
