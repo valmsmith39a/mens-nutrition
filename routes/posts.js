@@ -15,7 +15,8 @@ router.post('/', function(req, res, next) {
 });
 
 router.delete('/', function(req, res, next) {
-  console.log('inside delete route');
+  // Testing placeholder 
+  res.send('TEMPORARY MESSAGE: Delete route reached');
 })
 
 module.exports = router;
