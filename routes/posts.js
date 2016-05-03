@@ -15,13 +15,8 @@ router.post('/', function(req, res, next) {
 });
 
 router.delete('/:id/:index', function(req, res, next) {
-  console.log('in delete route. req.params is: ', req.params.id);
-  console.log('req.params.index is: ', req.params.index);
-
   Post.delete(req.params.id, function(err, postToDelete) {
-    console.log('err', err);
-    console.log('post deleted: ', postToDelete);
-    res.send(req.params.index);
+    res.status(err ? 400:200).send(err||req.params.index);
   });
 })
 

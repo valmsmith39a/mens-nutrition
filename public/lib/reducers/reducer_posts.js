@@ -16,7 +16,7 @@ export default function(state = INITIAL_STATE, action) {
       return [...state, action.payload.data];
     case DELETE_POST:
       const index = action.payload.data;
-      return [ ...state.slice(0, index), ...state.slice(1,index + 1) ];
+      return [ ...state.slice(0, index), ...state.slice(index + 1) ];
     default:
       return state;
   }

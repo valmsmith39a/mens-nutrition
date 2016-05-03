@@ -24,17 +24,10 @@ postSchema.statics.create = function (post, callback) {
 }
 
 postSchema.statics.delete = function(id, callback) {
-  console.log('in delete in model');
   Post.findById(id, function(err, postToDelete) {
-    console.log('found post to delete', postToDelete);
     postToDelete.remove(function(err) {
-
-      if(err) {
-        console.log('error in deleting: ', err);
-        callback(err);
-      }
-      console.log('post deleted success');
-      callback(null, 'Post successfully deleted');
+      if(err) return callback(err);
+      return callback(null);
     });
   });
 }
