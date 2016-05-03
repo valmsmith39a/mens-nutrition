@@ -5,7 +5,7 @@ export default ({ post: { url }, index }) => {
   return (
     <li>
       {url}
-      <DeletePost />
+      <DeletePost index={index}/>
     </li>
   );
   }
