@@ -23,5 +23,21 @@ postSchema.statics.create = function (post, callback) {
   });
 }
 
+postSchema.statics.delete = function(index, callback) {
+  console.log('in delete in model');
+  Post.findById(index, function(err, postToDelete) {
+    console.log('found post to delete', postToDelete);
+    postToDelete.remove(function(err) {
+
+      if(err) {
+        console.log('error in deleting: ', err);
+        callback(err);
+      }
+      console.log('post deleted success');
+      callback(null, 'Post successfully deleted');
+    });
+  });
+}
+
 Post = mongoose.model('Post', postSchema);
 module.exports = Post;

@@ -16,7 +16,11 @@ router.post('/', function(req, res, next) {
 
 router.delete('/:index', function(req, res, next) {
   console.log('in delete route. req.params is: ', req.params.index);
-  res.send('TEMPORARY MESSAGE: Delete route reached');
+  Post.delete(req.params.index, function(err, postToDelete) {
+    console.log('err', err);
+    console.log('post deleted: ', postToDelete);
+    res.send('TEMPORARY MESSAGE: Delete route reached');
+  });
 })
 
 module.exports = router;

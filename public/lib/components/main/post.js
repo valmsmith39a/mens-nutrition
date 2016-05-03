@@ -1,11 +1,11 @@
 import React from 'react';
 import DeletePost from './deletePost';
 
-export default ({ post: { url }, index }) => {
+export default ({ post, post: { url }, index }) => {
   return (
     <li>
       {url}
-      <DeletePost index={index}/>
+      <DeletePost index={index} id={post._id} />
     </li>
   );
   }
