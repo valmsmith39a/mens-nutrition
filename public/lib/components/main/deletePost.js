@@ -7,7 +7,7 @@ class DeletePost extends React.Component {
     super(props);
   }
   handleClick() {
-    this.props.deletePost(this.props.index)
+    this.props.deletePost(this.props.id)
       .then(response => {
         console.log('response in delete is: ', response);
       });

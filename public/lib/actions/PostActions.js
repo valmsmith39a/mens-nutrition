@@ -26,9 +26,9 @@ export function createPost(post) {
   }
 }
 
-export function deletePost(index) {
+export function deletePost(id) {
   // console.log(`${DELETE_POST_URL}/${index}`);
-  const request = axios.delete(`${DELETE_POST_URL}/${index}`);
+  const request = axios.delete(`${DELETE_POST_URL}/${id}`);
 
   return {
     type: DELETE_POST,

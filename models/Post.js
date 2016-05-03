@@ -23,9 +23,9 @@ postSchema.statics.create = function (post, callback) {
   });
 }
 
-postSchema.statics.delete = function(index, callback) {
+postSchema.statics.delete = function(id, callback) {
   console.log('in delete in model');
-  Post.findById(index, function(err, postToDelete) {
+  Post.findById(id, function(err, postToDelete) {
     console.log('found post to delete', postToDelete);
     postToDelete.remove(function(err) {
 
