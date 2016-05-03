@@ -14,8 +14,8 @@ router.post('/', function(req, res, next) {
   });
 });
 
-router.delete('/', function(req, res, next) {
-  // Testing placeholder 
+router.delete('/:index', function(req, res, next) {
+  console.log('in delete route. req.params is: ', req.params.index);
   res.send('TEMPORARY MESSAGE: Delete route reached');
 })
 
