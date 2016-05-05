@@ -4,7 +4,12 @@ import { deletePost } from '../../actions/PostActions';
 
 let DeletePost = ({ dispatch }) => {
   return (
-    <div>Delete</div>
+    <button onClick={e => {
+      e.preventDefault()
+      dispatch(deletePost)
+    }}>
+      Delete
+    </button>
   )
 }
 
