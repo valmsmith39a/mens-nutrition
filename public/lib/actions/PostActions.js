@@ -26,9 +26,18 @@ export function createPost(post) {
   }
 }
 
-export function deletePost(id, index) {
-  const request = axios.delete(`${DELETE_POST_URL}/${id}/${index}`);
+// export function deletePost(id, index) {
+//   const request = axios.delete(`${DELETE_POST_URL}/${id}/${index}`);
+//
+//   return {
+//     type: DELETE_POST,
+//     payload: request
+//   }
+// }
 
+export const deletePost = (id, index) => {
+  const request = axios.delete(`${DELETE_POST_URL}/${id}/${index}`);
+  
   return {
     type: DELETE_POST,
     payload: request
