@@ -5,16 +5,25 @@ import {
 } from '../../actions/PostActions';
 
 let PostInput = ({ dispatch }) => {
+  let input
+  
   return (
-    <div id='input-box-wrapper'>
-      <input id='input-box' type='text' placeholder='Web URL. Example: www.cnn.com' />
-      <button type='button' className='btn btn-primary' id='input-btn' onClick={ e => {
-          e.preventDefault();
-          dispatch(createPost({url: 'some url'}))
+    <div>
+      <form onSubmit={ e => {
+        e.preventDefault()
+        if(!input.value.trim()) {
+          return
         }
-      }>
-      Post
-      </button>
+        dispatch(createPost(input.value))
+        input.value = ''
+      }}>
+        <input ref={node => {
+          input = node
+        }} />
+        <button type='submit'>
+          Post
+        </button>
+      </form>
     </div>
   )
 }
@@ -23,6 +32,20 @@ PostInput = connect()(PostInput)
 
 export default PostInput
 
+
+
+
+
+// <div id='input-box-wrapper'>
+//   <input id='input-box' type='text' placeholder='Web URL. Example: www.cnn.com' />
+//   <button type='button' className='btn btn-primary' id='input-btn' onClick={ e => {
+//       e.preventDefault();
+//       dispatch(createPost({url: 'some url'}))
+//     }
+//   }>
+//   Post
+//   </button>
+// </div>
 // class PostInput extends React.Component {
 //   createPost() {
 //     const postObject = {
