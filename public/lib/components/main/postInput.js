@@ -8,14 +8,18 @@ let PostInput = ({ dispatch }) => {
   return (
     <div id='input-box-wrapper'>
       <input id='input-box' type='text' placeholder='Web URL. Example: www.cnn.com' />
-      <button type='button' className='btn btn-primary' id='input-btn'>
+      <button type='button' className='btn btn-primary' id='input-btn' onClick={ e => {
+          e.preventDefault();
+          dispatch(createPost({url: 'some url'}))
+        }
+      }>
       Post
       </button>
     </div>
   )
 }
 
-PostInput = connect()(PostInput);
+PostInput = connect()(PostInput)
 
 export default PostInput
 
