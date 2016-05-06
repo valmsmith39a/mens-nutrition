@@ -6,7 +6,7 @@ import {
 
 let PostInput = ({ dispatch }) => {
   let input
-  
+
   return (
     <div>
       <form onSubmit={ e => {
@@ -14,8 +14,8 @@ let PostInput = ({ dispatch }) => {
         if(!input.value.trim()) {
           return
         }
-        dispatch(createPost(input.value))
-        input.value = ''
+        dispatch(createPost({url: input.value}))
+        // input.value = ''
       }}>
         <input ref={node => {
           input = node
