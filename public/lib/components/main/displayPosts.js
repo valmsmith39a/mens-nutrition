@@ -3,55 +3,30 @@ import { connect } from 'react-redux';
 import { getAllPosts } from '../../actions/PostActions';
 import Post from './post';
 
-// class DisplayPosts extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.props.getAllPosts()
-//       .then(response => {});
-//   }
-//
-//   renderPosts() {
-//     return this.props.posts.map((post, index) =>
-//         <Post key={index} post={post} index={index} />
-//     );
-//   }
-//
-//   render() {
-//     return (
-//       <ul>
-//         {this.renderPosts()}
-//       </ul>
-//     );
-//   }
-// }
-//
-// function mapStateToProps(state) {
-//   return state;
-// }
-//
-// export default connect(mapStateToProps, { getAllPosts })(DisplayPosts);
+class DisplayPosts extends React.Component {
+  constructor(props) {
+    super(props);
+    this.props.getAllPosts()
+      .then(response => {});
+  }
 
-// Refactoring from class level to functional component
+  renderPosts() {
+    return this.props.posts.map((post, index) =>
+        <Post key={index} post={post} index={index} />
+    );
+  }
 
-let GetPosts = (props) => {
-  props.getAllPosts()
-  .then(response => {
-    console.log('res:', response);
-    DisplayPosts(response)
-  });
+  render() {
+    return (
+      <ul>
+        {this.renderPosts()}
+      </ul>
+    );
+  }
 }
 
-let DisplayPosts = (posts) => {
-  console.log('props in displayposts: ', props);
-  return(
-    <div>Display Posts</div>
-  );
-}
-
-const mapStateToProps = (state) => {
+function mapStateToProps(state) {
   return state;
 }
 
-GetPosts = connect(mapStateToProps, { getAllPosts })(GetPosts);
-
-export default GetPosts;
+export default connect(mapStateToProps, { getAllPosts })(DisplayPosts);
