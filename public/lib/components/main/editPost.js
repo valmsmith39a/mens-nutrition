@@ -1,15 +1,12 @@
+import React from 'react';
 import { connect } from 'react-redux';
 
 let EditPost = function({ dispatch }) {
   return(
-    <div>
-      <button>
-        Edit
-      </button>
-    </div>
+    <button>Edit</button>
   );
 }
 
-let EditPost = connect()(EditPost);
+EditPost = connect()(EditPost);
 
 export default EditPost;
