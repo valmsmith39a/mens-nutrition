@@ -18,7 +18,6 @@ class EditPost extends React.Component {
   }
 
   saveEdit() {
-    console.log('key infor for edit: ', {url:this.refs.editedPostInput.value}, this.props.id, this.props.index);
     this.props.editPost({url:this.refs.editedPostInput.value}, this.props.id, this.props.index)
       .then(response => {
         console.log('response is: ', response);

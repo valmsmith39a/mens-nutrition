@@ -15,14 +15,12 @@ router.post('/', function(req, res, next) {
 });
 
 router.put('/:id/:index', function(req, res, next) {
-  // Temporarily send back edited post and index
-  res.send({
-    editedPost:req.body,
-    editedPostIndex: parseInt(req.params.index)
+  Post.edit(req.body, req.params.id, function(err, editedPost) {
+    res.status(err ? 400:200).send(err||{
+      editedPost:editedPost,
+      editedPostIndex:parseInt(req.params.index)
+    });
   });
-  // Post.edit(req.body, function(err, editedPost) {
-  //   res.status(err ? 400:200).send(err||editedPost);
-  // });
 });
 
 router.delete('/:id/:index', function(req, res, next) {

@@ -23,6 +23,13 @@ postSchema.statics.create = function (post, callback) {
   });
 }
 
+postSchema.statics.edit = function (editedPost, id, callback) {
+  Post.findByIdAndUpdate(id, editedPost, {new: true}, function(err, savedPost) {
+    if(err) return callback(err, null);
+    return callback(null, savedPost);
+  });
+}
+
 postSchema.statics.delete = function(id, callback) {
   Post.findById(id, function(err, postToDelete) {
     postToDelete.remove(function(err) {
