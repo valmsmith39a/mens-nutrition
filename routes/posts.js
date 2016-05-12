@@ -14,6 +14,15 @@ router.post('/', function(req, res, next) {
   });
 });
 
+router.put('/', function(req, res, next) {
+  console.log('in put route. edited post is: ', req.body);
+  // temporarily sends edited post back to client
+  res.send(req.body);
+  // Post.edit(req.body, function(err, editedPost) {
+  //   res.status(err ? 400:200).send(err||editedPost);
+  // });
+});
+
 router.delete('/:id/:index', function(req, res, next) {
   Post.delete(req.params.id, function(err, postToDelete) {
     res.status(err ? 400:200).send(err||req.params.index);

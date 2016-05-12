@@ -29,7 +29,7 @@ export function createPost(post) {
 }
 
 export function editPost(editedPost) {
-  const request = axios.put(EDIT_POST_URL, post);
+  const request = axios.put(EDIT_POST_URL, editedPost);
 
   return {
     type: EDIT_POST,
