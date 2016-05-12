@@ -2,10 +2,12 @@ import axios from 'axios';
 
 export const GET_ALL_POSTS = 'GET_ALL_POSTS';
 export const CREATE_POST = 'CREATE_POST';
+export const EDIT_POST = 'EDIT_POST';
 export const DELETE_POST = 'DELETE_POST';
 
 const GET_ALL_POSTS_URL = '/posts';
 const CREATE_POST_URL = '/posts';
+const EDIT_POST_URL = '/posts'
 const DELETE_POST_URL = '/posts';
 
 export function getAllPosts() {
@@ -22,6 +24,15 @@ export function createPost(post) {
 
   return {
     type: CREATE_POST,
+    payload: request
+  }
+}
+
+export function editPost(editedPost) {
+  const request = axios.put(EDIT_POST_URL, post);
+
+  return {
+    type: EDIT_POST,
     payload: request
   }
 }

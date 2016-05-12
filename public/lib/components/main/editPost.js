@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { editPost } from '../../actions/PostActions';
 
 class EditPost extends React.Component {
   constructor(props) {
@@ -13,13 +14,19 @@ class EditPost extends React.Component {
 
   closeForm() {
     this.setState({show: false});
+    this.saveEdit();
+  }
+
+  saveEdit() {
+    console.log('in save edit');
+    console.log('editedpostinput: ', this.refs.editedPostInput.value);
   }
 
   showEditForm() {
     if(this.state.show) {
       return(
         <div>
-          <input />
+          <input ref='editedPostInput' />
           <button onClick={this.closeForm.bind(this)}>Save Edit</button>
         </div>
       );
@@ -39,7 +46,7 @@ class EditPost extends React.Component {
   }
 }
 
-export default connect()(EditPost);
+export default connect(null, { editPost })(EditPost);
 
 // let EditPost = function({ dispatch }) {
 //   return(
