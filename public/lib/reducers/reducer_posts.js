@@ -1,6 +1,7 @@
 import {
   GET_ALL_POSTS,
   CREATE_POST,
+  EDIT_POST,
   DELETE_POST
 } from '../actions/PostActions';
 
@@ -14,9 +15,14 @@ export default function(state = INITIAL_STATE, action) {
     case CREATE_POST:
       // action.payload.data is the post created
       return [...state, action.payload.data];
+    case EDIT_POST:
+      // action.payload.data is an object with the edited post index and edited post
+      const editedPostIndex = action.payload.data.editedPostIndex;
+      const editedPost = action.payload.data.editedPost;
+      return [...state.slice(0, editedPostIndex), editedPost, ...state.slice(editedPostIndex+1)];
     case DELETE_POST:
-      const index = action.payload.data;
-      return [ ...state.slice(0, index), ...state.slice(index + 1) ];
+      let index = action.payload.data;
+      return [...state.slice(0, index), ...state.slice(index + 1)];
     default:
       return state;
   }

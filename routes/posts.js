@@ -14,10 +14,12 @@ router.post('/', function(req, res, next) {
   });
 });
 
-router.put('/', function(req, res, next) {
-  console.log('in put route. edited post is: ', req.body);
-  // temporarily sends edited post back to client
-  res.send(req.body);
+router.put('/:id/:index', function(req, res, next) {
+  // Temporarily send back edited post and index
+  res.send({
+    editedPost:req.body,
+    editedPostIndex: parseInt(req.params.index)
+  });
   // Post.edit(req.body, function(err, editedPost) {
   //   res.status(err ? 400:200).send(err||editedPost);
   // });

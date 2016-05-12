@@ -28,8 +28,8 @@ export function createPost(post) {
   }
 }
 
-export function editPost(editedPost) {
-  const request = axios.put(EDIT_POST_URL, editedPost);
+export function editPost(editedPost, id, index) {
+  const request = axios.put(`${EDIT_POST_URL}/${id}/${index}`, editedPost);
 
   return {
     type: EDIT_POST,

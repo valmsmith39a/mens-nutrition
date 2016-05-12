@@ -6,6 +6,6 @@ export default ({ post, post: { url }, index }) => (
   <li>
     {url}
     <DeletePost index={index} id={post._id} />
-    <EditPost />
+    <EditPost index={index} id={post._id} />
   </li>
 );
