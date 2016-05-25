@@ -36,8 +36,16 @@ body {
   background-color: red;
 }
 
+.post {
+  margin: 10px 25vw; 
+}
+
 .display-posts {
   margin-top: 10px;
   list-style-type: none;
   text-align: center;
+}
+
+#delete-btn {
+
 }
