@@ -15,10 +15,13 @@ body {
 }
 
 #post-input {
-
+  height: 45px;
+  width: 33vw;
 }
 
 #post-input-form {
+  height: 40px;
+  margin-top: 10px;
   text-align: center;
 }
 
@@ -28,6 +31,10 @@ body {
 
 #post-btn {
 
+}
+
+#input-btn-wrapper {
+  background-color: red;
 }
 
 /*#input-box-wrapper {
