@@ -18,7 +18,7 @@ class DisplayPosts extends React.Component {
 
   render() {
     return (
-      <ul>
+      <ul className='display-posts'>
         {this.renderPosts()}
       </ul>
     );

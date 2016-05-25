@@ -20,7 +20,6 @@ body {
 }
 
 #post-input-form {
-  height: 40px;
   margin-top: 10px;
   text-align: center;
 }
@@ -37,19 +36,8 @@ body {
   background-color: red;
 }
 
-/*#input-box-wrapper {
-  text-align: center;
-}*/
-
-/*#input-box {
-  width: 400px;
-  height: 30px;
+.display-posts {
   margin-top: 10px;
-
-}*/
-
-/*#input-btn {
-  width: 60px;
-  height: 30px;
-  margin-top: -4px;
-}*/
+  list-style-type: none;
+  text-align: center;
+}
