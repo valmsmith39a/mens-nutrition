@@ -40,7 +40,7 @@ class EditPost extends React.Component {
   render() {
     return(
       <div>
-        <button onClick={this.showForm.bind(this)}>Edit
+        <button className='btn btn-primary' onClick={this.showForm.bind(this)}>Edit
         </button>
         {this.showEditForm()}
       </div>

@@ -14,19 +14,35 @@ body {
   margin: 2% auto;
 }
 
-#input-box-wrapper {
+#post-input {
+
+}
+
+#post-input-form {
   text-align: center;
 }
 
-#input-box {
+#post-input {
+  margin-right: 10px;
+}
+
+#post-btn {
+
+}
+
+/*#input-box-wrapper {
+  text-align: center;
+}*/
+
+/*#input-box {
   width: 400px;
   height: 30px;
   margin-top: 10px;
 
-}
+}*/
 
-#input-btn {
+/*#input-btn {
   width: 60px;
   height: 30px;
   margin-top: -4px;
-}
+}*/

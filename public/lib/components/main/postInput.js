@@ -8,8 +8,8 @@ let PostInput = ({ dispatch }) => {
   let input
 
   return (
-    <div>
-      <form onSubmit={ e => {
+    <div id='post-input-wrapper'>
+      <form id='post-input-form' onSubmit={ e => {
         e.preventDefault()
         if(!input.value.trim()) {
           return
@@ -17,10 +17,10 @@ let PostInput = ({ dispatch }) => {
         dispatch(createPost({url: input.value}))
         input.value = ''
       }}>
-        <input ref={node => {
+        <input id='post-input' ref={node => {
           input = node
         }} />
-        <button type='submit'>
+        <button type='submit' className='btn btn-primary' id='post-btn'>
           Post
         </button>
       </form>
