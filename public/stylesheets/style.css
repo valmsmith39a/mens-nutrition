@@ -28,10 +28,6 @@ body {
   margin-right: 10px;
 }
 
-#post-btn {
-
-}
-
 #input-btn-wrapper {
   background-color: red;
 }
@@ -42,12 +38,14 @@ body {
   margin: 50px 25vw;
 }
 
+.delete-edit-wrapper {}
+
+#delete-wrapper {
+ right: -20px;
+}
+
 .display-posts {
   margin-top: 10px;
   list-style-type: none;
   text-align: center;
-}
-
-#delete-btn {
-
 }
