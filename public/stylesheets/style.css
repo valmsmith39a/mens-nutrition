@@ -54,7 +54,12 @@ body {
   margin: 2%;
 }
 
+.post-title {
+  margin-top: 3%;
+}
+
 .delete-edit-wrapper {
+  margin-top: 3%;
 
 }
 
