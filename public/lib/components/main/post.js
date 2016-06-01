@@ -4,6 +4,9 @@ import EditPost from './editPost';
 
 export default ({ post, post: { url }, index }) => (
   <li className='post'>
+    <div className='post-image'>
+      image
+    </div>
     <div className='row'>
       {url}
     </div>

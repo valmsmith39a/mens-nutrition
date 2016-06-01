@@ -20,7 +20,7 @@ let PostInput = ({ dispatch }) => {
         <input id='post-input' ref={node => {
           input = node
         }} />
-        <button type='submit' className='btn btn-primary' id='post-btn'>
+        <button type='submit' className='btn btn-default' id='post-btn'>
           Post
         </button>
       </form>
