@@ -37,18 +37,26 @@ body {
 
 .post {
   background-color: white;
-  height: 15vw;
+  height: 30vw;
   padding: 5px 15px;
   margin: 50px 25vw;
 }
 
 .post-image {
-  height: 80%;
+  height: 75%;
   width: 100%;
   background-color: red;
 }
 
-.delete-edit-wrapper {}
+.img-url {
+  height: 90%;
+  width: 75%;
+  margin: 2%;
+}
+
+.delete-edit-wrapper {
+
+}
 
 #delete-wrapper {
  right: -20px;
