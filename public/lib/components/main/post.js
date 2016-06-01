@@ -2,10 +2,10 @@ import React from 'react';
 import DeletePost from './deletePost';
 import EditPost from './editPost';
 
-export default ({ post, post: { url }, index }) => (
+export default ({ post, post: { url, img }, index }) => (
   <li className='post'>
     <div className='post-image'>
-      <img src='http://i2.wp.com/www.theimpulsivebuy.com/wordpress/wp-content/uploads/2015/03/McDonalds-Artisan-Grilled-Chicken-Sandwich.jpg?resize=640%2C532' className='img-url' />
+      <img src={img} className='img-url' />
     </div>
     <div className='row post-title'>
       {url}
