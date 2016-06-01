@@ -6,7 +6,7 @@ import {
 
 let PostInput = ({ dispatch }) => {
   let input
-
+  
   return (
     <div id='post-input-wrapper'>
       <form id='post-input-form' onSubmit={ e => {
