@@ -14,7 +14,7 @@ let PostInput = ({ dispatch }) => {
         if(!input.value.trim()) {
           return
         }
-        dispatch(createPost({url: input.value}))
+        dispatch(createPost({url: input.value, img:'https://www.panerabread.com/panerabread/menu/grid/bbq-chicken-salad-whole.jpg/_jcr_content/renditions/bbq-chicken-salad-whole.desktop.jpeg'}))
         input.value = ''
       }}>
         <input id='post-input' ref={node => {

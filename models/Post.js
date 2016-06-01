@@ -3,7 +3,8 @@
 var mongoose = require('mongoose');
 
 let postSchema = new mongoose.Schema({
-  url: { type: String }
+  url: { type: String },
+  img: { type: String }
 });
 
 var Post;
